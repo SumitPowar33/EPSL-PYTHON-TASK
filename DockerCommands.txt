@@ -1,0 +1,13 @@
+#To run the application follow below commands
+
+
+#Step1 -: Build Application in Docker Container(Here flask_docker is my container name)
+  
+	docker build -t flask_docker .
+
+#Step2 -: Run Application in Containerize Environment( Here I'm using Port 5000)
+
+	docker run -p 5000:5000 flask_docker
+
+	 
+
