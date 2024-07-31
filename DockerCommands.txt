@@ -1,0 +1,26 @@
+#To run the application follow below commands
+
+
+#Step1 -: Build Application in Docker Container(Here flask_docker is my container name)
+  
+	docker build -t flask_docker .
+
+#Step2 -: Run Application in Containerize Environment( Here I'm using Port 5000)
+
+	docker run -p 5000:5000 flask_docker
+
+# Step3 -: for the creating database conatiner I'm using the following commands
+
+        1] first i have created network for communication between containers using below command
+
+                docker network create my-network
+
+        2] for run the mysql container I'm using the below command
+
+                docker run -d --name Studentdatabase --network my-network -e MYSQL_ROOT_PASSWORD=root@123 -e MYSQL_DATABASE=student_performance -p 3307:3306 mysql:latest
+
+
+ # for Running i use the follwing command
+
+        docker run -d --name flask_docker --network my-network -p 5000:5000 -e DB_HOST=Studentdatabase -e DB_USER=admin -e DB_PASSWORD=root@123 -e DB_NAME=student_performance flask-docker
+
