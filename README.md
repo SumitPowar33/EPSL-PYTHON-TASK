@@ -41,7 +41,7 @@ This project is a simple Flask web application for managing student performance 
 
    Ensure you have a MySQL server running with the following configuration:
 
-   - Host: `192.168.105.33`
+   - Host: `172.31.80.1`
    - Port: `3306`
    - User: `admin`
    - Password: `root@123`
